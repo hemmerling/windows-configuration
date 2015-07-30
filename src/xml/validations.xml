@@ -1,0 +1,8 @@
+<validations>
+	<os enabled="false"/>
+	<memory enabled="true" threshold="8"/>
+	<installation_disk_space enabled="true" threshold="8"/>
+	<db-supported enabled="false"/>
+	<license-key enabled="true"/>
+	<repository enabled="true"/>
+</validations>
