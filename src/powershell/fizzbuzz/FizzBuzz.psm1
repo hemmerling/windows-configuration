@@ -32,10 +32,11 @@
 #
 function ConvertTo-FizzBuzz {
     [CmdletBinding()]
+    #region Parameter Block
     param (
         [parameter(Mandatory=$true,ValueFromPipeline=$true)]
         [int32]$Number
-
+    #endregion Parameter Block
     )
     PROCESS {
         Write-Verbose "ConvertTo-FizzBuzz -Number"
@@ -50,10 +51,11 @@ function ConvertTo-FizzBuzz {
 #
 function Get-FizzBuzz {
     [CmdletBinding()]
+    #region Parameter Block
     param (
         [parameter(Mandatory=$true,ValueFromPipeline=$true)]
         [string[]]$Numbers
-
+    #endregion Parameter Block
     )
     PROCESS {
         Write-Verbose "Get-FizzBuzz -Numbers"
@@ -72,10 +74,62 @@ function FizzBuzz00 {
 
 }
 
+<#
+    .SYNOPSIS 
+    FizzBuzz01 - Returns input value.
+
+    .DESCRIPTION
+    FizzBuzz01 - Returns input value.
+    
+    .PARAMETER anInputValue
+    Positive Number -ge 1.
+
+    .INPUTS
+    None. You cannot pipe objects to FizzBuzz01.
+
+    .OUTPUTS
+    System.String. 
+    FizzBuzz01 returns a string with the FizzBuzz answer.
+
+    .EXAMPLE
+    C:\PS> Get-FizzBuzz01 1
+
+    .LINK
+    http://www.github.com/hemmerling/fizzbuzz
+
+    .LINK
+    Get-FizzBuzz01
+#>        
 function FizzBuzz01($anInputValue) {
     return ($anInputValue)
 }
 
+<#
+    .SYNOPSIS 
+    FizzBuzz02 - Returns "Fizz" for input "3".
+
+    .DESCRIPTION
+    FizzBuzz02 - Returns "Fizz" for input "3".
+    
+    .PARAMETER anInputValue
+    Positive Number -ge 1.
+
+    .INPUTS
+    None. You cannot pipe objects to FizzBuzz02.
+
+    .OUTPUTS
+    System.String. 
+    FizzBuzz02 returns a string with the FizzBuzz answer.
+
+    .EXAMPLE
+    C:\PS> FizzBuzz02 3
+
+    .LINK
+    http://www.github.com/hemmerling/fizzbuzz
+
+    .LINK
+    FizzBuzz02
+#> 
 function FizzBuzz02($anInputValue) {
     if ($anInputValue -eq "3") {
         return ("Fizz")
@@ -85,6 +139,34 @@ function FizzBuzz02($anInputValue) {
     }
 }
 
+<#
+    .SYNOPSIS 
+    FizzBuzz03 - Returns "Fizz" for input "3"
+    and "Buzz" for input "5".
+
+    .DESCRIPTION
+    FizzBuzz03 - Returns "Fizz" for input "3"
+    and "Buzz" for input "5".
+    
+    .PARAMETER anInputValue
+    Positive Number -ge 1.
+
+    .INPUTS
+    None. You cannot pipe objects to FizzBuzz03.
+
+    .OUTPUTS
+    System.String. 
+    FizzBuzz03 returns a string with the FizzBuzz answer.
+
+    .EXAMPLE
+    C:\PS> FizzBuzz03 5
+
+    .LINK
+    http://www.github.com/hemmerling/fizzbuzz
+
+    .LINK
+    FizzBuzz03
+#> 
 function FizzBuzz03($anInputValue) {
     if ($anInputValue -eq "3") {
         return ("Fizz")
@@ -100,6 +182,33 @@ function FizzBuzz03($anInputValue) {
     }
 }
 
+<#
+    .SYNOPSIS 
+    FizzBuzz04 - Returns "Fizz" for input "3"
+    and "Buzz" for input "5", covers multiple of "3".
+    .DESCRIPTION
+    FizzBuzz04 - Returns "Fizz" for input "3"
+    and "Buzz" for input "5", covers multiple of "3".
+    
+    .PARAMETER anInputValue
+    Positive Number -ge 1.
+
+    .INPUTS
+    None. You cannot pipe objects to FizzBuzz04.
+
+    .OUTPUTS
+    System.String. 
+    FizzBuzz04 returns a string with the FizzBuzz answer.
+
+    .EXAMPLE
+    C:\PS> FizzBuzz04 6
+
+    .LINK
+    http://www.github.com/hemmerling/fizzbuzz
+
+    .LINK
+    FizzBuzz04
+#> 
 function FizzBuzz04($anInputValue) {
     if (($anInputValue % 3) -eq 0) {
         return ("Fizz")
@@ -115,6 +224,35 @@ function FizzBuzz04($anInputValue) {
     }
 }
 
+<#
+    .SYNOPSIS 
+    FizzBuzz05 - Returns "Fizz" for input "3"
+    and "Buzz" for input "5", covers multiple of "3"
+    and "5".
+
+    .DESCRIPTION
+    FizzBuzz05 - Returns "Fizz" for input "3"
+    and "Buzz" for input "5", covers multiple of "3"
+    and "5".
+    
+    .PARAMETER anInputValue
+    Positive Number -ge 1.
+
+    .INPUTS
+    None. You cannot pipe objects to FizzBuzz04.
+
+    .OUTPUTS
+    System.String. 
+    FizzBuzz05 returns a string with the FizzBuzz answer.
+
+    .EXAMPLE
+    C:\PS> FizzBuzz05 10
+    .LINK
+    http://www.github.com/hemmerling/fizzbuzz
+
+    .LINK
+    FizzBuzz05
+#> 
 function FizzBuzz05($anInputValue) {
     if (($anInputValue % 3) -eq 0) {
         return ("Fizz")
@@ -130,8 +268,36 @@ function FizzBuzz05($anInputValue) {
     }
 }
 
-function FizzBuzz($anInputValue) {
+<#
+    .SYNOPSIS 
+    FizzBuzz05 - Returns "Fizz" for input "3"
+    and "Buzz" for input "5", covers multiple of "3"
+    and "5",  and of both.
 
+    .DESCRIPTION
+    FizzBuzz - Returns "Fizz" for input "3"
+    and "Buzz" for input "5", covers multiple of "3"
+    and "5", and of both.
+    
+    .PARAMETER anInputValue
+    Positive Number -ge 1.
+
+    .INPUTS
+    None. You cannot pipe objects to FizzBuzz04.
+
+    .OUTPUTS
+    System.String. 
+    FizzBuzz returns a string with the FizzBuzz answer
+
+    .EXAMPLE
+    C:\PS> FizzBuzz 15
+    .LINK
+    http://www.github.com/hemmerling/fizzbuzz
+
+    .LINK
+    FizzBuzz
+#> 
+function FizzBuzz($anInputValue) {
     $aReturnValue="";
     if ((($anInputValue % 3) -eq 0) -or (($anInputValue %5) -eq 0)) {
         if (($anInputValue % 3) -eq 0) {
